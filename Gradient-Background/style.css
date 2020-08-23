@@ -1,0 +1,72 @@
+html {
+  margin: none;
+  padding: none;
+  height: 100%;
+  width: 100%;
+}
+
+::selection {
+  background-color: #FF6700;
+  color: white;
+  text-shadow: none;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow:
+    -1px -1px 0 rgba(0, 0, 0, 0.85),
+    1px -1px 0 rgba(0, 0, 0, 0.85),
+    -1px 1px 0 rgba(0, 0, 0, 0.85),
+    1px 1px 0 rgba(0, 0, 0, 0.85);
+  text-align: center;
+  text-transform: uppercase;
+  top: 15%;
+  letter-spacing: .5em;
+
+  background: linear-gradient(180deg, blue, red);
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 3.5em;
+  width: 100%;
+}
+
+h3 {
+  font-weight: 900;
+  font-size: 1em;
+  text-transform: none;
+  letter-spacing: 0.01em;
+}
+
+input, input:focus {
+  background-color: rgba(0, 0, 0, 0.15);
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
+
+button#random, button#random:focus,
+button#rotate, button#rotate:focus {
+  display: block;
+  font-size: 0.80rem;
+  margin: auto;
+  margin-top: 15px;
+
+  color: white;
+  outline: none;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.show {
+  opacity: 1;
+  transition: opacity 400ms;
+}
+
+.hide {
+  opacity: 0;
+  transition: opacity 400ms;
+}

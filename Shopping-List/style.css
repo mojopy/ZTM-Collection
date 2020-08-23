@@ -1,0 +1,13 @@
+.done {
+  text-decoration: line-through solid red;
+  font-style: italic;
+}
+
+.delete {
+  background-color: darkred;
+  color: white;
+  border: none;
+  font-size: 0.75rem;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
