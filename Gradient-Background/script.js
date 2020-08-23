@@ -68,10 +68,3 @@ document.addEventListener("keypress", function(event) {
     }
   }
 })
-
-setInterval(randomizeColors, 1000);
-
-const object = {
-  name: 'Sally'
-}
-
