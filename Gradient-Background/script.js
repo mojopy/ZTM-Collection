@@ -4,15 +4,14 @@ const body = document.querySelector("body");
 const btns = document.querySelector("#buttons");
 const random = document.querySelector("#random");
 const rotate = document.querySelector("#rotate");
-const color1 = document.getElementsByName("color1");
-const color2 = document.getElementsByName("color2");
+const [color1, color2] = document.querySelectorAll('.color');
 
 // Oh no, a global variable...Ideally, you would keep this within its own scope.
 let angle = 0;
 
-function setGradient() {
+setGradient = () => {
   // Paste the new style with (possibly) new degrees, and new colors in!
-  body.style.background = "linear-gradient(" + angle + "deg, " + color1[0].value + ", " + color2[0].value + ")";
+  body.style.background = "linear-gradient(" + angle + "deg, " + color1.value + ", " + color2.value + ")";
 
   // Constantly update the bottom text w/ the new css style.
   css.textContent = body.style.background;
@@ -20,13 +19,13 @@ function setGradient() {
 
 // Generates hex codes within color parameters (000000 to ffffff)
 // Expression graciously stolen off a comment at https://www.paulirish.com/2009/random-hex-color-code-snippets/ & adjusted slightly.
-function randomizeColors() {
-  color1[0].value = '#' + ((Math.random()*(1<<24)|0) + "000000").toString(16).slice(2, 8).slice(-6);
-  color2[0].value = '#' + ((Math.random()*(1<<24)|0) + "000000").toString(16).slice(2, 8).slice(-6);
+randomizeColors = () => {
+  color1.value = '#' + ((Math.random()*(1<<24)|0) + "000000").toString(16).slice(2, 8).slice(-6);
+  color2.value = '#' + ((Math.random()*(1<<24)|0) + "000000").toString(16).slice(2, 8).slice(-6);
   setGradient();
 }
 
-function rotateBackground() {
+rotateBackground = () => {
   // Degrees handler, values increments adjusted to what felt best to me.
   if (angle >= 360) {
     angle = 5;
@@ -40,8 +39,8 @@ function rotateBackground() {
 setGradient();
 
 // Listen to user input for color picking.
-color1[0].addEventListener("input", setGradient);
-color2[0].addEventListener("input", setGradient);
+color1.addEventListener("input", setGradient);
+color2.addEventListener("input", setGradient);
 
 // Listen to button clicks.
 random.addEventListener("click", randomizeColors);
@@ -69,9 +68,6 @@ document.addEventListener("keypress", function(event) {
   }
 })
 
-setInterval(randomizeColors, 1000);
 
-const object = {
-  name: 'Sally'
-}
+// setInterval(randomizeColors, 1000); // comment this out for auto-rando colours.
 
