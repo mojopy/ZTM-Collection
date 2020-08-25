@@ -68,6 +68,5 @@ document.addEventListener("keypress", function(event) {
   }
 })
 
-
 // setInterval(randomizeColors, 1000); // comment this out for auto-rando colours.
 
